@@ -2,33 +2,39 @@ import java.util.Scanner;
 
 public class PrimeNumbers {
     public static void main(String[] args) {
-
-        // ~ defining variables 'a' dnd 'b'
+        // ~
         int n = 0;
+        // ...
 
         while (true) {
-            // ~ input values for 'n' and 'm'
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("\nEnter an integer for 'n'");
-            n = scanner.nextInt();
-            System.out.println("inputs: n:= " + n);
+            // ~ input values for 'n'
+            try {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("\n---\nEnter an integer for 'n'; enter '0' to exit");
+                n = scanner.nextInt();
 
-            // ~
-            if (n <= 0 ) {
-                System.out.println("error: inputs for 'n' is required to be Z_+");
+                if (n <= 0 ) throw new Exception();
+            }
+
+            // ~ invalid inputs
+            catch(Exception e) {
+                System.out.println("invalid input: 'n' is required to be a positive integer smaller then 2147483647");
                 break;
-            };
+            }
 
-            // ~
-            int result = PrimeNumbers.isPrime(n);
-            if (result == 1) System.out.println("" + n + " is prime");
-            else System.out.println("" + n + " is not prime; factors with " + result);
+            // ~ check for factors
+            System.out.println("inputs: n:= " + n);
+            java.lang.Integer result = PrimeNumbers.isNPrime(n);
+            System.out.println(result != null && result == 1
+                    ? "" + n + " is prime" : result == null
+                    ? "" + n + " is not prime"
+                    : "" + n + " is not prime; factors with " + result);
         }
     }
 
-    public static int isPrime(int n) {
+    public static java.lang.Integer isNPrime(int n) {
         // ~ 0 & 1
-        if (n <= 1) return 0;
+        if (n <= 1) return null;
 
         // ~ 2 & 3 are prime
         if (n <= 3) return 1;
@@ -39,7 +45,7 @@ public class PrimeNumbers {
         // 0 = n%3 when n = _,3,_,_,6,_,_,9,__,__,12,__,__,15,__,__,18,__,__,21,__,__,24,__,__,27, ...
         if (n % 3 == 0) return 3;
 
-        // ~ while thru possible factors
+        // ~ while thru other possible factors
         // 0 = n%[_,_,_,5,_,7,_,_,__,11,__,13,__,__,__,17,__,19,__,__,__,23,__,25,__,__, ...]
         int nRoot = (int) Math.ceil(Math.sqrt(n));
         int count = 5;
