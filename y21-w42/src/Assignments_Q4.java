@@ -47,10 +47,10 @@ public class Assignments_Q4 {
 
         int result = 0;
         while (n > 0) {
-            int temp1 = n - n % 10;
-            System.out.print("" + (n - temp1) + (temp1 / 10 == 0 ? "\n" : " + "));
-            result += n - temp1;
-            n = temp1 / 10;
+            int delta = n - n % 10;
+            System.out.print("" + (n - delta) + (delta / 10 == 0 ? "\n" : " + "));
+            result += n - delta;
+            n = delta / 10;
         }
 
         System.out.println("result: " + result);
