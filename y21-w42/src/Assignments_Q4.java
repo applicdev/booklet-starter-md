@@ -8,7 +8,7 @@ public class Assignments_Q4 {
         System.out.println("\n~ a");
         // ---
         // 1. Read an integer input
-        // 2. Output the checksum
+        // 2. Output its checksum
         //
         // @example
         // f(2312) = 2 + 3 + 1 + 2 = 8
@@ -19,7 +19,7 @@ public class Assignments_Q4 {
         // ~ b
         System.out.println("\n~ b");
         // 1. Read an integer input
-        // 2. Output the checksum without using any String functions
+        // 2. Output its checksum (Without using any String functions)
         // ---
         assignments_q4_b();
     }
