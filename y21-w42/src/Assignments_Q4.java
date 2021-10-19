@@ -41,7 +41,7 @@ public class Assignments_Q4 {
     }
 
     public static void assignments_q4_b() {
-        System.out.println("Enter an integer 'n'");
+        System.out.println("Enter an integer 'n' to get find its checksum");
         int n = new java.util.Scanner(System.in).nextInt();
         System.out.println("inputs: n:= " + n);
 
