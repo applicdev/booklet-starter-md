@@ -33,7 +33,7 @@ public class Assignments1 {
         System.out.println("i: " + i);
 
         // ---
-        System.out.println("\n---\n");
+        System.out.print("\n---\n");
         // ---
 
         // Q2
@@ -47,66 +47,97 @@ public class Assignments1 {
                 if (m == 8)
                     System.out.print("" + n + "-" + m + "\n");
                 else
-                    System.out.print("" + n + "-" + m + ", ") ;
+                    System.out.print("" + n + "-" + m + ",\t") ;
 
-        // ~ c
-        System.out.println("\n~ c");
+//        // ~ c
+//        System.out.println("\n~ c");
+//        // ---
+//        System.out.println("Enter an integer for grid width");
+//        int width = new java.util.Scanner(System.in).nextInt();
+//        System.out.println("Enter an integer for grid height");
+//        int height = new java.util.Scanner(System.in).nextInt();
+//        System.out.println("inputs: width:= " + width + " height:= " + height);
+//
+//        for (int n = 0; n <= height; n++) for (int m = 0; m <= width; m++)
+//            if (m == width)
+//                System.out.print("" + n + "-" + m + "\n");
+//            else
+//                System.out.print("" + n + "-" + m + ",\t") ;
+
         // ---
-        System.out.println("Enter an integer for grid width");
-        int width = new java.util.Scanner(System.in).nextInt();
-        System.out.println("Enter an integer for grid height");
-        int height = new java.util.Scanner(System.in).nextInt();
-        System.out.println("inputs: width:= " + width + " height:= " + height);
-
-        for (int n = 0; n <= height; n++) for (int m = 0; m <= width; m++)
-            if (m == width)
-                System.out.print("" + n + "-" + m + "\n");
-            else
-                System.out.print("" + n + "-" + m + ",\t") ;
-
-        // ---
-        System.out.println("\n---\n");
+        System.out.print("\n---\n");
         // ---
 
         // Q3
         System.out.println("\nQ3");
         // ---
 
-        // ~
-        System.out.println("Enter an integer for how many lines");
-        int lines = new java.util.Scanner(System.in).nextInt();
-        System.out.println("inputs: lines:= " + lines);
-
-        for (int n = 0; n <= lines; n++) for (int m = 0; m <=  n; m++)
-            if (m == n)
-                System.out.print("*\n");
-            else
-                System.out.print("*") ;
+//        // ~
+//        System.out.println("Enter an integer for how many lines");
+//        int lines = new java.util.Scanner(System.in).nextInt();
+//        System.out.println("inputs: lines:= " + lines);
+//
+//        for (int n = 0; n <= lines; n++) for (int m = 0; m <=  n; m++)
+//            if (m == n)
+//                System.out.print("*\n");
+//            else
+//                System.out.print("*") ;
 
         // ---
-        System.out.println("\n---\n");
+        System.out.print("\n---\n");
         // ---
 
         // Q4
         System.out.println("\nQ4");
         // ---
 
-        // ~
-        System.out.println("Enter an integer 'n'");
-        String n = new java.util.Scanner(System.in).nextLine();
-        System.out.println("inputs: n:= " + n);
+        // ~ a
+        System.out.println("\n~ a");
+        // ---
+        {
+            System.out.println("Enter an integer 'n'");
+            String n = new java.util.Scanner(System.in).nextLine();
+            System.out.println("inputs: n:= " + n);
 
-        int result = 0;
+            int result = 0;
 
-        char[] nArray = n.toCharArray();
-        for (int j = 0; j < nArray.length; j++) {
-            if (j == nArray.length - 1) System.out.print("" + nArray[j]  + "\n");
-            else System.out.print("" + nArray[j] + " + ") ;
+            char[] nArray = n.toCharArray();
+            for (int j = 0; j < nArray.length; j++) {
+                if (j == nArray.length - 1) System.out.print("" + nArray[j]  + "\n");
+                else System.out.print("" + nArray[j] + " + ") ;
 
-            result += Character.getNumericValue(nArray[j]);
+                result += Character.getNumericValue(nArray[j]);
+            }
+
+            System.out.println("result: " + result);
         }
 
-        System.out.println("result: " + result);
+
+        // ---
+        System.out.print("\n---\n");
+        // ---
+
+        // ~ b
+        System.out.println("\n~ b");
+        // ---
+        {
+            System.out.println("Enter an integer 'n'");
+            int n = new java.util.Scanner(System.in).nextInt();
+            System.out.println("inputs: n:= " + n);
+            int result = 0;
+
+            while (n > 0) {
+                int temp1 = (n / 10) * 10;
+
+                if (temp1 / 10 == 0) System.out.print("" + (n - temp1) + "\n");
+                else System.out.print("" + (n - temp1) + " + ") ;
+
+                result += n - temp1;
+                n =  temp1 / 10 ;
+            }
+
+            System.out.println("result: " + result);
+        }
 
     }
 }
