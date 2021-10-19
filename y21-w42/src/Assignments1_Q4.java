@@ -33,9 +33,7 @@ public class Assignments1_Q4 {
 
         char[] nArray = n.toCharArray();
         for (int j = 0; j < nArray.length; j++) {
-            if (j == nArray.length - 1) System.out.print("" + nArray[j] + "\n");
-            else System.out.print("" + nArray[j] + " + ");
-
+            System.out.print("" + nArray[j] + (j == nArray.length - 1 ? "\n" : " + "));
             result += Character.getNumericValue(nArray[j]);
         }
 
@@ -46,14 +44,11 @@ public class Assignments1_Q4 {
         System.out.println("Enter an integer 'n'");
         int n = new java.util.Scanner(System.in).nextInt();
         System.out.println("inputs: n:= " + n);
+
         int result = 0;
-
         while (n > 0) {
-            int temp1 = (n / 10) * 10;
-
-            if (temp1 / 10 == 0) System.out.print("" + (n - temp1) + "\n");
-            else System.out.print("" + (n - temp1) + " + ");
-
+            int temp1 = n - n % 10;
+            System.out.print("" + (n - temp1) + (temp1 / 10 == 0 ? "\n" : " + "));
             result += n - temp1;
             n = temp1 / 10;
         }
