@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cc2a09f-72c9-4000-bd99-e61f8b23b5e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/srh-fia-gdp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/src/Assignments1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/src/BaseProject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/src/EuclideanAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EuclideanAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/src/PrimeNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrimeNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../y21-w42/srh-fia-gdp-base-project.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ziPjR2NMCFXM2B4xHeuc1Qbzck" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Application.PrimeNumbers">
+    <configuration name="EuclideanAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EuclideanAlgorithm" />
+      <module name="y21-w41" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrimeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PrimeNumbers" />
+      <module name="y21-w41" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PrimeNumbers" />
+        <item itemvalue="Application.EuclideanAlgorithm" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cc2a09f-72c9-4000-bd99-e61f8b23b5e3" name="Changes" comment="" />
+      <created>1634628071740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634628071740</updated>
+    </task>
+    <servers />
+  </component>
+</project>

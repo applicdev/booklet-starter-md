@@ -1,4 +1,4 @@
-public class BaseProject {
+public class HelloWorld {
 
     // ~ "main" + [tab] => program entry function
     public static void main(String[] args) {
