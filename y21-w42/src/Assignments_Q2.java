@@ -32,22 +32,29 @@ public class Assignments_Q2 {
     }
 
     public static void assignments_q2_a_b() {
-        for (int n = 0; n <= 8; n++)
-            for (int m = 0; m <= 8; m++)
-                System.out.print("" + (n + m) + (m == 8 ? "\n" : ",\t"));
+        for (int n = 1; n <= 8; n++)
+            for (int m = 0; m < 8; m++)
+                System.out.print(((n + m) < 10 ? " " : "") + (n + m) + (m == (8 - 1) ? "\n" : ",\t"));
     }
 
     public static void assignments_q2_c() {
         System.out.println("Enter an integer as the start value");
-        int x = new java.util.Scanner(System.in).nextInt();
+        int val = new java.util.Scanner(System.in).nextInt();
         System.out.println("Enter an integer for the grid width");
-        int width = new java.util.Scanner(System.in).nextInt();
+        int wid = new java.util.Scanner(System.in).nextInt();
         System.out.println("Enter an integer for the grid height");
-        int height = new java.util.Scanner(System.in).nextInt();
-        System.out.println("inputs: width:= " + width + " height:= " + height);
+        int hei = new java.util.Scanner(System.in).nextInt();
+        System.out.println("inputs: inital_value:= " + val + " width:= " + wid + " height:= " + hei);
 
-        for (int n = 0; n <= height; n++)
-            for (int m = 0; m <= width; m++)
-                System.out.print("" + (x + n + m) + (m == width ? "\n" : ",\t"));
+        int len = (("" + (val + hei + wid - 2)).toCharArray()).length;
+
+        for (int n = 0; n <= hei - 1; n++) {
+            for (int m = 0; m < wid; m++) {
+                String num = "" + (val + n + m);
+                while (num.length() < len) num = " " + num;
+                System.out.print(num + (m == wid - 1 ? "\n" : ",\t"));
+            }
+        }
+
     }
 }
