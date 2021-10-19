@@ -7,10 +7,14 @@ public class Assignments_Q1 {
         // ~ a
         System.out.println("\n~ a");
         // ---
+        // 1. Do some math things~
+        // ---
         assignments_q1_a();
 
         // ~ b
         System.out.println("\n~ b");
+        // ---
+        // 1. Do more math things, but this time with floats! :3o
         // ---
         assignments_q1_b();
     }

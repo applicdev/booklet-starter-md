@@ -7,6 +7,16 @@ public class Assignments_Q3 {
         // ~ a
         System.out.println("\n~ a");
         // ---
+        // 1. print a stack of "*"
+        //
+        // @example
+        // f() => *
+        //        **
+        //        ***
+        //        ****
+        //        *****
+        //        ******
+        // ---
         assignments_q3_a();
     }
 

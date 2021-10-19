@@ -7,14 +7,22 @@ public class Assignments_Q4 {
         // ~ a
         System.out.println("\n~ a");
         // ---
+        // 1. Read an integer input
+        // 2. Output the checksum
+        //
+        // @example
+        // f(2312) = 2 + 3 + 1 + 2 = 8
+        // ---
         assignments_q4_a();
+        // ---
 
         // ~ b
         System.out.println("\n~ b");
+        // 1. Read an integer input
+        // 2. Output the checksum without using any String functions
         // ---
         assignments_q4_b();
     }
-
 
     public static void assignments_q4_a() {
         System.out.println("Enter an integer 'n' to get find its checksum");
