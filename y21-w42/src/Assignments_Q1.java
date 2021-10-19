@@ -35,7 +35,7 @@ public class Assignments_Q1 {
         float f = 3f;
         float g = f + 2;
         float h = g / f;
-        float i = f % f;
+        float i = g % f;
 
         System.out.println("f: " + f);
         System.out.println("g: " + g);
