@@ -1,4 +1,4 @@
-public class Assignments_Q4 {
+public class Assignments_Q1_4 {
     public static void main(String[] args) {
         // Q4
         System.out.println("\nQ4");
