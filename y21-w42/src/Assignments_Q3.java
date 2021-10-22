@@ -51,11 +51,9 @@ public class Assignments_Q3 {
         int lines = new java.util.Scanner(System.in).nextInt();
         System.out.println("inputs: lines:= " + lines);
 
-
         for (int n = 0; n <= lines; n++) {
-            for (int o = 0; o <= (lines - n) / 2; o++)
-                System.out.print("  ");
-            System.out.print(n % 2 == 0 ? "" : " ");
+            for (int o = 0; o <= lines - n; o++)
+                System.out.print(" ");
             for (int m = 0; m <= n; m++)
                 System.out.print(m == n ? "*\n" : "* ");
         }
