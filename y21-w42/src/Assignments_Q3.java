@@ -52,7 +52,7 @@ public class Assignments_Q3 {
         System.out.println("inputs: lines:= " + lines);
 
         for (int n = 0; n <= lines; n++) {
-            for (int o = 0; o <= lines - n; o++)
+            for (int o = 0; o <= lines - n - 1; o++)
                 System.out.print(" ");
             for (int m = 0; m <= n; m++)
                 System.out.print(m == n ? "*\n" : "* ");
