@@ -58,7 +58,7 @@ public class Assignments_Q2 {
         for (int n = 0; n <= hei - 1; n++)
             for (int m = 0; m < wid; m++)
                 System.out.print(m == 0
-                        ? indentToInclude(val + n + m, hei - 1) : m != (wid - 1)
+                        ? indentToInclude(val + n + m, val + hei - 1) : m != (wid - 1)
                         ? " " + indentToInclude(val + n + m, val + wid + hei - 1)
                         : " " + indentToInclude(val + n + m, val + wid + hei - 1) + "\n");
     }
