@@ -31,7 +31,7 @@ public class Assignments_Q2 {
         assignments_q2_c();
     }
 
-    public static String indentToFit(int value, int reference) {
+    public static String indentToInclude(int value, int reference) {
         String val = "" + value;
         while (val.length() < ("" + reference).length()) val = " " + val;
         return val;
@@ -41,9 +41,9 @@ public class Assignments_Q2 {
         for (int n = 1; n <= 8; n++)
             for (int m = 0; m < 8; m++)
                 System.out.print(m == 0
-                        ? indentToFit(n + m, 8) : m != (8 - 1)
-                        ? " " + indentToFit(n + m, 15)
-                        : " " + indentToFit(n + m, 15) + "\n");
+                        ? indentToInclude(n + m, 8) : m != (8 - 1)
+                        ? " " + indentToInclude(n + m, 15)
+                        : " " + indentToInclude(n + m, 15) + "\n");
     }
 
     public static void assignments_q2_c() {
@@ -58,8 +58,8 @@ public class Assignments_Q2 {
         for (int n = 0; n <= hei - 1; n++)
             for (int m = 0; m < wid; m++)
                 System.out.print(m == 0
-                        ? indentToFit(val + n + m, hei - 1) : m != (wid - 1)
-                        ? " " + indentToFit(val + n + m, val + wid + hei - 1)
-                        : " " + indentToFit(val + n + m, val + wid + hei - 1) + "\n");
+                        ? indentToInclude(val + n + m, hei - 1) : m != (wid - 1)
+                        ? " " + indentToInclude(val + n + m, val + wid + hei - 1)
+                        : " " + indentToInclude(val + n + m, val + wid + hei - 1) + "\n");
     }
 }
