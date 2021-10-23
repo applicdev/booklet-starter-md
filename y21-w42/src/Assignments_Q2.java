@@ -13,7 +13,7 @@ public class Assignments_Q2 {
         // .
         // .
         // .
-        // 8 9 10 11 ... 16
+        // 8 9 10 11 ... 15
         // ---
         assignments_q2_a_b();
 
@@ -26,15 +26,24 @@ public class Assignments_Q2 {
         // .
         // .
         // .
-        // n+8 n+9 n+10 n+11 ... n+16
+        // n+8 n+9 n+10 n+11 ... n+15
         // ---
         assignments_q2_c();
+    }
+
+    public static String indentToFit(int value, int reference) {
+        String val = "" + value;
+        while (val.length() < ("" + reference).length()) val = " " + val;
+        return val;
     }
 
     public static void assignments_q2_a_b() {
         for (int n = 1; n <= 8; n++)
             for (int m = 0; m < 8; m++)
-                System.out.print(((n + m) < 10 ? " " : "") + (n + m) + (m == (8 - 1) ? "\n" : ",\t"));
+                System.out.print(m == 0
+                        ? indentToFit(n + m, 8) : m != (8 - 1)
+                        ? " " + indentToFit(n + m, 15)
+                        : " " + indentToFit(n + m, 15) + "\n");
     }
 
     public static void assignments_q2_c() {
@@ -46,15 +55,11 @@ public class Assignments_Q2 {
         int hei = new java.util.Scanner(System.in).nextInt();
         System.out.println("inputs: inital_value:= " + val + " width:= " + wid + " height:= " + hei);
 
-        int len = (("" + (val + hei + wid - 2)).toCharArray()).length;
-
-        for (int n = 0; n <= hei - 1; n++) {
-            for (int m = 0; m < wid; m++) {
-                String num = "" + (val + n + m);
-                while (num.length() < len) num = " " + num;
-                System.out.print(num + (m == wid - 1 ? "\n" : ",\t"));
-            }
-        }
-
+        for (int n = 0; n <= hei - 1; n++)
+            for (int m = 0; m < wid; m++)
+                System.out.print(m == 0
+                        ? indentToFit(val + n + m, hei - 1) : m != (wid - 1)
+                        ? " " + indentToFit(val + n + m, val + wid + hei - 1)
+                        : " " + indentToFit(val + n + m, val + wid + hei - 1) + "\n");
     }
 }
