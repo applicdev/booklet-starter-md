@@ -7,26 +7,31 @@ public class Assignments_Q2 {
         // ~ a & b
         System.out.println("\n~ a & b");
         // ---
-        // 1. output:
-        // 1 2  3  4 ...  8
-        // 2 3  4  5 ...  9
-        // .
-        // .
-        // .
-        // 8 9 10 11 ... 15
+        // 1. output a grid of: f() => 1 + x + y:
+        //
+        // @example
+        // f() => ~1 2  3  4 ...  8
+        //        ~2 3  4  5 ...  9
+        //        ~.
+        //        ~.
+        //        ~.
+        //        ~8 9 10 11 ... 15
         // ---
         assignments_q2_a_b();
 
         // ~ b
         System.out.println("\n~ c");
         // ---
-        // 1. output:
-        // n+1 n+2  n+3  n+4 ...  n+8
-        // n+2 n+3  n+4  n+5 ...  n+9
-        // .
-        // .
-        // .
-        // n+8 n+9 n+10 n+11 ... n+15
+        // 1. read an integer input as 'n'
+        // 2. output a grid of: f() => n + x + y
+        //
+        // @example
+        // f() => ~n+1 n+2  n+3  n+4 ...  n+8
+        //        ~n+2 n+3  n+4  n+5 ...  n+9
+        //        ~.
+        //        ~.
+        //        ~.
+        //        ~n+8 n+9 n+10 n+11 ... n+15
         // ---
         assignments_q2_c();
     }

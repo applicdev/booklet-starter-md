@@ -10,12 +10,12 @@ public class Assignments_Q3 {
         // 1. print a stack of "*"
         //
         // @example
-        // f() => *
-        //        * *
-        //        * * *
-        //        * * * *
-        //        * * * * *
-        //        * * * * * *
+        // f() => ~*
+        //        ~* *
+        //        ~* * *
+        //        ~* * * *
+        //        ~* * * * *
+        //        ~* * * * * *
         // ---
         assignments_q3_a();
 
@@ -25,12 +25,12 @@ public class Assignments_Q3 {
         // 1. print a stack of "*"
         //
         // @example
-        // f() =>      *
-        //            * *
-        //           * * *
-        //          * * * *
-        //         * * * * *
-        //        * * * * * *
+        // f() => ~     *
+        //        ~    * *
+        //        ~   * * *
+        //        ~  * * * *
+        //        ~ * * * * *
+        //        ~* * * * * *
         // ---
         assignments_q3_b();
     }
@@ -44,7 +44,6 @@ public class Assignments_Q3 {
             for (int m = 0; m <= n; m++)
                 System.out.print(m == n ? "*\n" : "* ");
     }
-
 
     public static void assignments_q3_b() {
         System.out.println("Enter an integer for how many lines * should increase");
