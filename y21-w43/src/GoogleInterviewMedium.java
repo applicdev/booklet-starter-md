@@ -57,7 +57,7 @@ public class GoogleInterviewMedium {
             int nSib = n + sib[1];
 
             // ~ skipp cells on border
-            if (mSib <= -1 || nSib <= -1 || mSib >= input.length || nSib >= input[0].length) continue;
+            if (mSib <= -1 || mSib >= input.length || nSib <= -1 || nSib >= input[0].length) continue;
 
             // ~ traverse from sibling
             if (input[mSib][nSib] == 1 && result[mSib][nSib] == -1) {
@@ -79,7 +79,7 @@ public class GoogleInterviewMedium {
             if (m == 0 || m == input.length - 1) for (int n = 0; n < input[0].length; ++n)
                 interviewSearchSolution_search(m, n, input, result);
             else {
-                // ~ lines in between
+                // ~ lines inbetween
                 interviewSearchSolution_search(m, 0, input, result);
                 interviewSearchSolution_search(m, input[0].length - 1, input, result);
             }
