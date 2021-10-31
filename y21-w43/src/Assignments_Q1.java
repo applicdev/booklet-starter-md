@@ -47,20 +47,20 @@ public class Assignments_Q1 {
         //          7! =              7 * 6 * 5 * 4 * 3 * 2 * 1
         //     (10-7)! =                              3 * 2 * 1
         //
-        // 10 choose 7 =      10!                                     |  issue: n! gets huge fast
+        // 10 choose 7 =      10!                                     |  problem: n! gets huge fast
         //               --------------                               |  int  max. n! -> 12!
         //                7! * (10-7)!                                |  long max. n! -> 20!
         //
-        //             =   10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1     |
-        //               -------------------------------------------  | "7 * 6 * 5 * 4 * 3 * 2 * 1" cancel out
-        //                (7 * 6 * 5 * 4 * 3 * 2 * 1) * (3 * 2 * 1)   |
+        //             =   10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1     |  ... * 7 * 6 * 5 * 4 * 3 * 2 * 1
+        //               -------------------------------------------  | ----------------------------------  cancel out
+        //                (7 * 6 * 5 * 4 * 3 * 2 * 1) * (3 * 2 * 1)   |  (7 * 6 * 5 * 4 * 3 * 2 * 1) * ...
         //
         //             =   10 * 9 * 8                                 |
-        //               -------------------------------------------  | can be rewritten to prevent large numbers
+        //               -------------------------------------------  | can be rearranged to keep numbers smaller
         //                                               3 * 2 * 1    |
         //
-        //             =  (10 / 1) * (9 / 2) * (8 / 3)                | looks loopable; something... something... --n, ++m
-        //
+        //             =  (10 / 1) * (9 / 2) * ( 8 / 3)               | looks loopable; "(n / m) * ((n+1) / (n-1)) * ..."
+        //                                                            | something... something... --n, ++m ...
         //             =  120
         //
         //
@@ -79,17 +79,19 @@ public class Assignments_Q1 {
         // Solution:
         // ~ Use the inverse of 'k' if fewer steps are required
         // a.e.
-        // 10 choose 7 == 120; requires 7 steps
-        // 10 choose 3 == 120; requires 3 steps
+        // 10 choose  7 = 120; requires 7 steps
+        // 10 choose  3 = 120; requires 3 steps
         if (k > r * 0.5F) k = r - k;
 
         // ~ Calculate the coefficient
         // a.e.
-        // 10 choose 10 =   1
-        //              = (((((((((1 * 10 / 1) * 9 / 2) * 8 / 3) * 7 / 4) * 6 / 5) * 5 / 6) * 4 / 7) * 3 / 8) * 2 / 9) * 1 / 10
+        // 10 choose 10 = 1
+        //              = 1 * 10 / 1 * 9 / 2 * 8 / 3 * 7 / 4 * 6 / 5 * 5 / 6 * 4 / 7 * 3 / 8 * 2 / 9 * 1 / 10
+        // loops/steps ->  |^1      |^2     |^3     |^4     |^5     |^6     |^7     |^8     |^9     |^10     |
         //
         // 10 choose  6 = 210
-        //              = (((((1 * 10 / 1) * 9 / 2) * 8 / 3) * 7 / 4) * 6 / 5) * 5 / 6
+        //              = 1 * 10 / 1 * 9 / 2 * 8 / 3 * 7 / 4 * 6 / 5 * 5 / 6
+        //                 |^1      |^2     |^3     |^4     |^5     |^6     |
         long result = 1L;
         for (int n = r, m = 1; m <= k; --n, ++m) {
             result = result * n / m;
