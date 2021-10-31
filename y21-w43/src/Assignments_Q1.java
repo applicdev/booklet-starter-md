@@ -59,7 +59,7 @@ public class Assignments_Q1 {
         //               -------------------------------------------  | can be rewritten to prevent large numbers
         //                                               3 * 2 * 1    |
         //
-        //             =  (10 / 1) * (9 / 2) * 8 / 3                  | looks loopable; something... something... --n, ++m
+        //             =  (10 / 1) * (9 / 2) * (8 / 3)                | looks loopable; something... something... --n, ++m
         //
         //             =  120
         //
@@ -70,9 +70,9 @@ public class Assignments_Q1 {
         //          3! =                              3 * 2 * 1
         //     (10-3)! =              7 * 6 * 5 * 4 * 3 * 2 * 1
         //
-        // 10 choose 3 =      10!        =      10!
-        //               --------------    --------------
-        //                3! * (10-3)!      7! * (10-7)!
+        // 10 choose 3 =      10!        ->       10!
+        //               --------------      --------------
+        //                3! * (10-3)!        7! * (10-7)!
         //
         //             = 10 choose 7
 
