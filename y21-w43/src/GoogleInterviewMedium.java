@@ -101,9 +101,9 @@ public class GoogleInterviewMedium {
         int[][] result = new int[input.length][input[0].length];
         int[][] filter = new int[input.length][input[0].length];
 
-        boolean matchedSomthing = true;
-        while (matchedSomthing) {
-            matchedSomthing = false;
+        boolean matchedSomething = true;
+        while (matchedSomething) {
+            matchedSomething = false;
 
             for (int n = 0; n < input.length; n++) {
                 for (int m = 0; m < input[n].length; m++) {
@@ -116,7 +116,7 @@ public class GoogleInterviewMedium {
                     if (m + 1 > input[n].length - 1 || result[n][m + 1] == 1) matched = true;
 
                     if (matched && result[n][m] != input[n][m]) {
-                        matchedSomthing = true;
+                        matchedSomething = true;
 
                         // ~
                         result[n][m] = input[n][m];
