@@ -3,18 +3,17 @@ public class Assignments_Q1 {
         // Q4
         System.out.println("\nQ1");
         // ---
-        // 1. Read an integer input
-        // 2. Output its checksum
+        // 1. Read an integer for set size and amount to be chosen
+        // 2. Output the binomial coefficient / chance to win a lottery with these properties
         //
-        //    n!
-        // --------  =  n choose r
-        // r!(n-r)!
+        // ~ binomial coefficient:
         //
-        // m : total number of possible numbers
-        // r : numbers of numbers chosen
+        // r choose k  =     r!
+        //                --------
+        //                k!(r-k)!
         //
-        // @example
-        // f(46 choose 6) = 9366819
+        // r : total amount of possible numbers in set
+        // k : amount of numbers chosen
         // ---
         while (true) assignments_q1();
         // ---
@@ -22,21 +21,21 @@ public class Assignments_Q1 {
 
 
     public static void assignments_q1() {
-        System.out.println("Enter an integer as range");
-        int ran = new java.util.Scanner(System.in).nextInt();
-        System.out.println("Enter an integer of how many to choose");
+        System.out.println("Enter an integer as the size of the set to choose from");
+        int set = new java.util.Scanner(System.in).nextInt();
+        System.out.println("Enter an integer how many to choose");
         int cho = new java.util.Scanner(System.in).nextInt();
-        System.out.println("inputs: range:= " + ran + " choose:= " + cho);
+        System.out.println("inputs: set_size:= " + set + " choose:= " + cho);
 
         // ~
-        java.lang.Long result = assignments_q1_binomialCoefficient(ran, cho);
+        java.lang.Long result = assignments_q1_binomialCoefficient(set, cho);
         System.out.println(result == null
                 ? "Coefficient too large; Input smaller numbers~\n"
-                : "result: " + ran + " choose " + cho + " = " + result + "\n");
+                : "result: " + set + " choose " + cho + " = " + result + "\n");
 
         // ~
         System.out.println(result == null ? ""
-                : "Given a lottery with " + ran + " possible numbers and " + cho
+                : "Given a lottery with " + set + " possible numbers and " + cho
                 + " to choose from, the possibility to match all " + cho + " is 1:" + result + ".\n");
     }
 
