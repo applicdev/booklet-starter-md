@@ -59,7 +59,7 @@ public class Assignments_Q1 {
         //               -------------------------------------------  | can be rearranged to keep numbers smaller
         //                                               3 * 2 * 1    |
         //
-        //             =  (10 / 1) * (9 / 2) * ( 8 / 3)               | looks loopable; "(n / m) * ((n+1) / (n-1)) * ..."
+        //             =  (10 / 1) * (9 / 2) * (8 / 3)                | looks loopable; "(n / m) * ((n+1) / (n-1)) * ..."
         //                                                            | something... something... --n, ++m ...
         //             =  120
         //
