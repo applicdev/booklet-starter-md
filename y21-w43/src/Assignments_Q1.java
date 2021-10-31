@@ -3,7 +3,7 @@ public class Assignments_Q1 {
         // Q4
         System.out.println("\nQ1");
         // ---
-        // 1. Read an integer for set size and amount to be chosen
+        // 1. Read two integers for set size and amount to be chosen
         // 2. Output the binomial coefficient / chance to win a lottery with these properties
         //
         // ~ binomial coefficient:
