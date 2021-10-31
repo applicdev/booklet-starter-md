@@ -83,7 +83,7 @@ public class Assignments_Q1 {
         // 10 choose 3 == 120; requires 3 steps
         if (k > r * 0.5F) k = r - k;
 
-        // ~ Calculate the binomial coefficient of (r choose k)
+        // ~ Calculate the coefficient
         // a.e.
         // 10 choose 10 =   1
         //              = (((((((((1 * 10 / 1) * 9 / 2) * 8 / 3) * 7 / 4) * 6 / 5) * 5 / 6) * 4 / 7) * 3 / 8) * 2 / 9) * 1 / 10
