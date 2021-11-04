@@ -62,7 +62,9 @@ public class Assignments_Q2 {
         // ---
 
         // ~ Find the thing
-        // @example
+        Double result = assignments_q2_traverse(range, null, 0);
+        String resultString = assignments_q2_doubleToString(result);
+
         // f(4) = _1 mod 1 = 0
         //         |
         //         > 1_0 mod 2 = 0
@@ -80,8 +82,6 @@ public class Assignments_Q2 {
         // 10   mod 2 = 0
         // 102  mod 3 = 0
         // 1020 mod 5 = 0
-        Double result = assignments_q2_traverse(range, null, 0);
-        String resultString = assignments_q2_doubleToString(result);
 
         // ---
         System.out.println(resultString.equals("") // 'result' may be null after 18+ digits
