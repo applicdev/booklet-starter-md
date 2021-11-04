@@ -6,14 +6,14 @@ public class Assignments_Q2 {
         // Q2
         System.out.println("\nQ2");
         // ---
-        // 1. Find the magic number
+        // 1. Find the magic numbers
         //
         // A number is magic if:
-        // - the value of the first 1 digits is divisible by 1
-        // - the value of the first 1-2 digits is divisible by 2
-        // - the value of the first 1-3 digits is divisible by 3
-        // - ...
-        // - the value of the first 1-10 digits is divisible by 10
+        // - the value of the first 1   digits is divisible by 1
+        // -                        1-2           divisible by 2
+        // -                        1-3           divisible by 3
+        // - ...                    ...           ...
+        // -                        1-10          divisible by 10
         //
         // ---
         while (true) assignments_q2();
