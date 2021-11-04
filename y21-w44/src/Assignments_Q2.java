@@ -52,17 +52,18 @@ public class Assignments_Q2 {
     }
 
     public static void assignments_q2() {
-        // ~ Define bounds
+        // ---
         System.out.println("Enter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
         double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
+        // ---
 
         // ~ Find the thing
         Double result = assignments_q2_traverse(range, null, 0);
         String resultString = assignments_q2_doubleToString(result);
 
         // ---
-        System.out.println(resultString.equals("") // 'result' may be null... :)
+        System.out.println(resultString.equals("") // 'result' may be null... idk/ when but it may...
                 ? "\nNo magic number with " + digits + " Digits found"
                 : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".");
         // ---
