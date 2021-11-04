@@ -38,7 +38,7 @@ public class Assignments_Q2 {
 
             // ~
             if (foundValue % stack == 0) {
-                System.out.println("stack: " + stack + "\tfoundValue: " + foundValue);
+                System.out.println("stack: " + stack + "\tfoundValue: " + foundValueString);
 
                 Double childValue = stack >= range
                         ? foundValue
