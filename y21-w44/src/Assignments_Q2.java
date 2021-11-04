@@ -16,7 +16,7 @@ public class Assignments_Q2 {
         // - the value of the first 1-10 digits is divisible by 10
         //
         // ---
-        assignments_q2();
+        while (true) assignments_q2();
     }
 
     public static String assignments_q2_doubleToString(Double n) {
@@ -64,8 +64,8 @@ public class Assignments_Q2 {
 
         // ---
         System.out.println(resultString.equals("") // 'result' may be null... idk/ when but it may...
-                ? "\nNo magic number with " + digits + " Digits found"
-                : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".");
+                ? "\nNo magic number with " + digits + " Digits found.\n"
+                : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".\n");
         // ---
     }
 }
