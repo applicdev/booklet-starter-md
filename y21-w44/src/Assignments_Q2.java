@@ -36,10 +36,10 @@ public class Assignments_Q2 {
             String foundValueString = assignments_q2_doubleToString(value) + n;
             Double foundValue = assignments_q2_stringToDouble(foundValueString);
 
-            // ~
             if (foundValue % stack == 0) {
                 System.out.println("stack: " + stack + "\tfoundValue: " + foundValueString);
 
+                // ~ Return if done or concatenate the next digit
                 Double childValue = stack >= range
                         ? foundValue
                         : assignments_q2_traverse(range, foundValue, stack);
@@ -48,7 +48,7 @@ public class Assignments_Q2 {
             }
         }
 
-        return null;
+        return null; // Null results for range > 17
     }
 
     public static void assignments_q2() {
@@ -84,7 +84,7 @@ public class Assignments_Q2 {
         // 1020 mod 5 = 0
 
         // ---
-        System.out.println(resultString.equals("") // 'result' may be null after 18+ digits
+        System.out.println(resultString.equals("")
                 ? "\nNo magic number with " + digits + " Digits found."
                 : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".");
 //        }
