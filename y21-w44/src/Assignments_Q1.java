@@ -3,14 +3,6 @@ public class Assignments_Q1 {
         // Q1
         System.out.println("\nQ1");
         // ---
-        // 1. Find the magic number
-        //
-        // A number is magic if:
-        // - the value of the 1   digits is divisible by 1
-        // - the value of the 2-3 digits is divisible by 2
-        // - the value of the 4-6 digits is divisible by 3
-        // - ...
-        // - All 10 positions are to
         //
         // ---
         System.out.println("\n~ a");
