@@ -28,28 +28,19 @@ public class Assignments_Q2 {
     }
 
     public static Double assignments_q2_traverse(Double range, Double value, int stack) {
-        int lenRange = assignments_q2_doubleToString(range).length();
-        int lenValue = assignments_q2_doubleToString(value).length();
-
-
-//        System.out.println("lenValue: " + lenValue);
-//        System.out.println("lenRange: " + lenRange);
-
-        // ~
         stack += 1;
 
         // ~
         for (int n = value == null ? 1 : 0; n <= 9; ++n) {
             // ~ Double type Concatenate 'value' and 'i' -> 12 + 3 = 123
-            Double foundValue = assignments_q2_stringToDouble(
-                    assignments_q2_doubleToString(value) + n
-            );
+            String foundValueString = assignments_q2_doubleToString(value) + n;
+            Double foundValue = assignments_q2_stringToDouble(foundValueString);
 
             // ~
             if (foundValue % stack == 0) {
-                System.out.println("stack: " + stack + ", foundValue: " + foundValue + ", done: " + (stack >= lenRange));
+                System.out.println("stack: " + stack + "\tfoundValue: " + foundValue);
 
-                Double childValue = stack >= lenRange
+                Double childValue = stack >= range
                         ? foundValue
                         : assignments_q2_traverse(range, foundValue, stack);
 
@@ -62,18 +53,18 @@ public class Assignments_Q2 {
 
     public static void assignments_q2() {
         // ~ Define bounds
-        int length = 10;
-        double range = Math.pow(10, length) - 1;
+        System.out.println("Enter an integer as the length of the magic number:");
+        int digits = new java.util.Scanner(System.in).nextInt();
+        double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
 
         // ~ Find the thing
-        String result = assignments_q2_doubleToString(
-                assignments_q2_traverse(range, null, 0)
-        );
+        Double result = assignments_q2_traverse(range, null, 0);
+        String resultString = assignments_q2_doubleToString(result);
 
         // ---
-        System.out.println(result == null
-                ? "No magic numbers found... :("
-                : "The magic number '" + result + "' was found.");
+        System.out.println(resultString.equals("") // 'result' may be null... :)
+                ? "\nNo magic number with " + digits + " Digits found"
+                : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".");
         // ---
     }
 }
