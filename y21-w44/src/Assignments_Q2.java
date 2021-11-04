@@ -32,7 +32,7 @@ public class Assignments_Q2 {
 
         // ~
         for (int n = value == null ? 1 : 0; n <= 9; ++n) {
-            // ~ Double type Concatenate 'value' and 'i' -> 12 + 3 = 123
+            // ~ Double type Concatenate 'value' and 'i' -> 12_3 = 123
             String foundValueString = assignments_q2_doubleToString(value) + n;
             Double foundValue = assignments_q2_stringToDouble(foundValueString);
 
@@ -62,6 +62,24 @@ public class Assignments_Q2 {
         // ---
 
         // ~ Find the thing
+        // @example
+        // f(4) = _1 mod 1 = 0
+        //         |
+        //         > 1_0 mod 2 = 0
+        //             |
+        //             > 10_0 mod 3 = 1
+        //             > 10_1 mod 3 = 2
+        //             > 10_2 mod 3 = 0
+        //                  |
+        //                  > 102_0 mod 4 = 0
+        //                        |
+        //                        >  return 1020; final state reached: depth > range
+        //      = 1020
+        //
+        // 1    mod 1 = 0
+        // 10   mod 2 = 0
+        // 102  mod 3 = 0
+        // 1020 mod 5 = 0
         Double result = assignments_q2_traverse(range, null, 0);
         String resultString = assignments_q2_doubleToString(result);
 
