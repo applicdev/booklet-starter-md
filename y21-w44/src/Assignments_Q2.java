@@ -33,16 +33,16 @@ public class Assignments_Q2 {
         // ~
         for (int n = value == null ? 1 : 0; n <= 9; ++n) {
             // ~ Concatenate 'value' and 'i' -> 12_3 = 123
-            String foundValueString = assignments_q2_doubleToString(value) + n;
-            Double foundValue = assignments_q2_stringToDouble(foundValueString);
+            String plainValue = assignments_q2_doubleToString(value);
+            Double joindValue = assignments_q2_stringToDouble(plainValue + n);
 
-            if (foundValue % stack == 0) {
-                System.out.println("stack: " + stack + "\tfound: " + foundValueString);
+            if (joindValue % stack == 0) {
+                System.out.println("stack: " + stack + "\tfound: " + plainValue + "_" + n);
 
                 // ~ Return if done or concatenate the next digit
                 Double childValue = stack >= range
-                        ? foundValue
-                        : assignments_q2_traverse(range, foundValue, stack);
+                        ? joindValue
+                        : assignments_q2_traverse(range, joindValue, stack);
 
                 if (childValue != null) return childValue; // Search has resolved~
             }
@@ -63,7 +63,7 @@ public class Assignments_Q2 {
 
         // ~ Find the thing
         Double result = assignments_q2_traverse(range, null, 0);
-        String resultString = assignments_q2_doubleToString(result);
+        String plainResult = assignments_q2_doubleToString(result);
 
         // f(4) = _1 mod 1 = 0
         //         |
@@ -84,9 +84,9 @@ public class Assignments_Q2 {
         // 1020 mod 5 = 0
 
         // ---
-        System.out.println(resultString.equals("")
+        System.out.println(plainResult.equals("")
                 ? "\nNo magic number with " + digits + " Digits found."
-                : "\nFirst magic number with " + digits + " Digits found was " + resultString + ".");
+                : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
 //        }
         // ---
     }
