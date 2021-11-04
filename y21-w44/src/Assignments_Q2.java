@@ -24,7 +24,7 @@ public class Assignments_Q2 {
     }
 
     public static Double assignments_q2_stringToDouble(String n) {
-        return Double.parseDouble(n);
+        return n.equals("") ? 0d : Double.parseDouble(n);
     }
 
     public static Double assignments_q2_traverse(Double range, Double value, int stack) {
