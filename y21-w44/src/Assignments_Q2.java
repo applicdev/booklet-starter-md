@@ -32,7 +32,7 @@ public class Assignments_Q2 {
 
         // ~
         for (int n = value == null ? 1 : 0; n <= 9; ++n) {
-            // ~ Double type Concatenate 'value' and 'i' -> 12_3 = 123
+            // ~ Concatenate 'value' and 'i' -> 12_3 = 123
             String foundValueString = assignments_q2_doubleToString(value) + n;
             Double foundValue = assignments_q2_stringToDouble(foundValueString);
 
