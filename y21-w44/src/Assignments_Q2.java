@@ -37,7 +37,7 @@ public class Assignments_Q2 {
             Double foundValue = assignments_q2_stringToDouble(foundValueString);
 
             if (foundValue % stack == 0) {
-                System.out.println("stack: " + stack + "\tfoundValue: " + foundValueString);
+                System.out.println("stack: " + stack + "\tfound: " + foundValueString);
 
                 // ~ Return if done or concatenate the next digit
                 Double childValue = stack >= range
