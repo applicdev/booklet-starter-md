@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 public class Assignments_Q2 {
     public static void main(String[] args) {
         // Q2
@@ -13,57 +16,64 @@ public class Assignments_Q2 {
         // - the value of the first 1-10 digits is divisible by 10
         //
         // ---
-        assignments_q1();
+        assignments_q2();
     }
 
-    public static void assignments_q1() {
-        // ---
-        long steps = 0;
-        long result = -1;
-        // ---
+    public static String assignments_q2_doubleToString(Double n) {
+        return n == null ? "" : new BigDecimal(n).toPlainString();
+    }
 
-        // ~ Define bounds
-        int nLength = 10;
-        double nLimit = Math.pow(10, nLength) - 1;
-        double nStart = Math.pow(10, nLength - 1);
-        double nDelta = nLength - (nStart % nLength);
+    public static Double assignments_q2_stringToDouble(String n) {
+        return Double.parseDouble(n);
+    }
 
-        // ~ Define checks
-        interface Check { }
-        Check[] checks = new Check[nLength];
-        for (int c = nLength; c >= 0; --c) {
-            int finalC = c;
-            checks[c] = new Check() { public boolean resolve(int n) { return n % finalC == 0; } };
-        }
+    public static Double assignments_q2_traverse(Double range, Double value, int stack) {
+        int lenRange = assignments_q2_doubleToString(range).length();
+        int lenValue = assignments_q2_doubleToString(value).length();
 
 
-        // ~ Find
-        for (double n = nStart + nDelta; n < nLimit; n += nLength) {
-            String val = ("" + n).substring(0, ("" + n).indexOf('.'));
-            if (n % 100000 == 0)
-                System.out.println("" + Math.floor(100 - ( n / nLimit  ) * 100) + " percent done; n: " + n);
+//        System.out.println("lenValue: " + lenValue);
+//        System.out.println("lenRange: " + lenRange);
+
+        // ~
+        stack += 1;
+
+        // ~
+        for (int n = value == null ? 1 : 0; n <= 9; ++n) {
+            // ~ Double type Concatenate 'value' and 'i' -> 12 + 3 = 123
+            Double foundValue = assignments_q2_stringToDouble(
+                    assignments_q2_doubleToString(value) + n
+            );
 
             // ~
-            boolean res = false;
+            if (foundValue % stack == 0) {
+                System.out.println("stack: " + stack + ", foundValue: " + foundValue + ", done: " + (stack >= lenRange));
 
-            for (int m = val.length(); m > 1; --m, ++steps) {
-                if (Double.parseDouble(val.substring(0, m)) % m == 0) break;;
-                res = true;
+                Double childValue = stack >= lenRange
+                        ? foundValue
+                        : assignments_q2_traverse(range, foundValue, stack);
+
+                if (childValue != null) return childValue; // Search has resolved~
             }
-
-            // ~
-            if (res) {
-                for (int m = val.length(); m > 1; --m) {
-                    System.out.println("" + val.substring(0, m) + " % " + m + " == 0");
-                }
-
-                result = (long)
-                n; break;
-            };
         }
 
+        return null;
+    }
+
+    public static void assignments_q2() {
+        // ~ Define bounds
+        int length = 10;
+        double range = Math.pow(10, length) - 1;
+
+        // ~ Find the thing
+        String result = assignments_q2_doubleToString(
+                assignments_q2_traverse(range, null, 0)
+        );
+
         // ---
-        System.out.println("The magic number " + result +  " was found after trying " + steps + " calculation steps.");
+        System.out.println(result == null
+                ? "No magic numbers found... :("
+                : "The magic number '" + result + "' was found.");
         // ---
     }
 }
