@@ -57,7 +57,7 @@ public class Assignments_Q2 {
         int digits = new java.util.Scanner(System.in).nextInt();
         double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
 
-//        for (int digits = 1; digits < 300; ++digits) {
+//        for (int digits = 1; digits < 50; ++digits) {
 //            double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
         // ---
 
