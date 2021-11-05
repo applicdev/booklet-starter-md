@@ -16,7 +16,7 @@ public class Assignments_Q2 {
         // -                        1-10           divisible by 10
         // ---
         while (true) assignments_q2();
-//        assignments_q2();
+//        while (true) assignments_q2_b();
     }
 
     public static String assignments_q2_doubleToString(Double n) {
@@ -90,4 +90,44 @@ public class Assignments_Q2 {
 //        }
         // ---
     }
+
+//    public static void assignments_q2_b() {
+//        // ---
+//        System.out.println("\nEnter an integer as the length of the magic number:");
+//        int digits = new java.util.Scanner(System.in).nextInt();
+//
+//
+//        // ~ Find the thing
+//        double result = -1;
+//        for (int n = 1, m = 1; n <= digits; ++m) {
+//            // ~ none possible
+//            if (m > 10) {
+//                result = -1;
+//                break;
+//            }
+//
+//            // ~ done
+//            if (new BigDecimal(result).toPlainString().length() > digits) break;
+//
+//            // ~ find next
+//            double val = Double.parseDouble("" + (result == -1 ? m : result * 10 + m));
+//            if (val % n == 0) {
+//                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
+//
+//                result = val;
+//                m = 0;
+//                ++n;
+//            }
+//        }
+//
+//        // ~
+//        String plainResult = new BigDecimal(result).toPlainString();
+//
+//        // ---
+//        System.out.println(plainResult.equals("")
+//                ? "\nNo magic number with " + digits + " Digits found."
+//                : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
+////        }
+//        // ---
+//    }
 }
