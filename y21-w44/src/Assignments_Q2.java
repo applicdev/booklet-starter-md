@@ -48,7 +48,7 @@ public class Assignments_Q2 {
             }
         }
 
-        return null; // Null results for range > 17
+        return null;
     }
 
     public static void assignments_q2() {
