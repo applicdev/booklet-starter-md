@@ -16,8 +16,8 @@ public class Assignments_Q2 {
         // - ...                    ...            ...
         // -                        1-10           divisible by 10
         // ---
-        while (true) assignments_q2_a();
-//        while (true) assignments_q2_b();
+//        while (true) assignments_q2_a(); // Found up to 18 -> 120054249048585600
+        while (true) assignments_q2_b(); // Found up to 25 -> 3608528850368400786036725
     }
 
     public static String assignments_q2_a_doubleToString(Double n) {
@@ -96,7 +96,6 @@ public class Assignments_Q2 {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
-        // Found up to 25 -> 3608528850368400786036725
         // ---
 
         int[] positionCache = new int[digits + 1];
