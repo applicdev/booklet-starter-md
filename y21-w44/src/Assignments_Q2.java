@@ -98,19 +98,18 @@ public class Assignments_Q2 {
         int digits = new java.util.Scanner(System.in).nextInt();
         // ---
 
-        int[] positionCache = new int[digits + 1];
-        String[] resultCache = new String[digits + 1];
+        int[] positionCache = new int[digits];
+        String[] resultCache = new String[digits];
         BigInteger result = new BigInteger("0");
 
         for (int n = 0, m = 1; ; ++m) {
             //  |--n----|
-            //   10_____
+            //   10m____
             //     ^
             //    'm' value (0-9) of any digit at position 'n'
 
             // ~ none possible at all
             if (n == 0 && m > 9) {
-                System.out.println("Err");
                 result = new BigInteger("-1");
                 break;
             }
