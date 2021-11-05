@@ -104,17 +104,17 @@ public class Assignments_Q2 {
 
         for (int n = 0, m = 1; ; ++m) {
             //  |--n----|
-            //   10m____
+            //   10_____
             //     ^
-            //    'm' value (0-9) of any digit at position 'n'
+            //    'm' value (between 0 and 9) of any digit at position 'n'
 
-            // ~ none possible at all
+            // ~ none possible at all; null case
             if (n == 0 && m > 9) {
                 result = new BigInteger("-1");
                 break;
             }
 
-            // ~ none possible in current
+            // ~ none possible in current path; move back up
             if (m > 9) {
                 --n;
                 result = new BigInteger(resultCache[n]);
