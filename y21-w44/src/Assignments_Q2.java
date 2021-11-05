@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 public class Assignments_Q2 {
     public static void main(String[] args) {
@@ -95,13 +96,14 @@ public class Assignments_Q2 {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
+        // Found up to 25 -> 3608528850368400786036725
         // ---
 
         int[] positionCache = new int[digits + 1];
         String[] resultCache = new String[digits + 1];
         BigInteger result = new BigInteger("0");
 
-        for (int n = 0, m = 1; n < digits; ++m) {
+        for (int n = 0, m = 1; ; ++m) {
             //  |--n----|
             //   10_____
             //     ^
@@ -109,6 +111,7 @@ public class Assignments_Q2 {
 
             // ~ none possible at all
             if (n == 0 && m > 9) {
+                System.out.println("Err");
                 result = new BigInteger("-1");
                 break;
             }
@@ -125,12 +128,11 @@ public class Assignments_Q2 {
             BigInteger val = result
                     .multiply(new BigInteger("10"))
                     .add(new BigInteger(String.valueOf(m)));
-            boolean match = val
-                    .mod(new BigInteger(String.valueOf(n + 1)))
-                    .equals(new BigInteger(String.valueOf(0)));
+            BigInteger des = new BigInteger(String.valueOf(n + 1));
+            boolean match = new BigInteger("0").equals(val.mod(des));
 
             if (match) {
-                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
+                System.out.println("n: " + n + "\tm: " + m + "\tdes: " + des + "\tvalue: " + val);
 
                 resultCache[n] = result.toString();
                 positionCache[n] = m;
@@ -138,6 +140,8 @@ public class Assignments_Q2 {
                 result = val;
                 m = -1;
                 ++n;
+
+                if (result.toString().length() >= digits) break;
             }
         }
 
