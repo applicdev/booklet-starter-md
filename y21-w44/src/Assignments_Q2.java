@@ -98,21 +98,36 @@ public class Assignments_Q2 {
 //
 //
 //        // ~ Find the thing
+//        int[] mCache = new int[digits + 1];
+//
+//        double[] resultCache = new double[digits + 1];
 //        double result = -1;
-//        for (int n = 1, m = 1; n <= digits; ++m) {
-//            // ~ none possible
-//            if (m > 10) {
+//
+//        for (int n = 1, m = 1; ; ++m) {
+//            // ~ done
+//            if (new BigDecimal(result).toPlainString().length() >= digits) break;
+//
+//            // ~ none possible at all
+//            if (n == 0 && m > 9) {
 //                result = -1;
 //                break;
 //            }
 //
-//            // ~ done
-//            if (new BigDecimal(result).toPlainString().length() > digits) break;
+//            // ~ none possible in current
+//            if (m > 9) {
+//                --n;
+//                result = resultCache[n];
+//                m = mCache[n];
+//                continue;
+//            }
 //
 //            // ~ find next
-//            double val = Double.parseDouble("" + (result == -1 ? m : result * 10 + m));
+//            double val = Double.parseDouble(new BigDecimal(result == -1 ? m : result * 10 + m).toPlainString());
 //            if (val % n == 0) {
-//                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
+//                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + new BigDecimal(val).toPlainString());
+//
+//                resultCache[n] = result;
+//                mCache[n] = m;
 //
 //                result = val;
 //                m = 0;
@@ -127,7 +142,6 @@ public class Assignments_Q2 {
 //        System.out.println(plainResult.equals("")
 //                ? "\nNo magic number with " + digits + " Digits found."
 //                : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
-////        }
 //        // ---
 //    }
 }
