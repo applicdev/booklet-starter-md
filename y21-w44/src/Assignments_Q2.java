@@ -55,7 +55,7 @@ public class Assignments_Q2 {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
-        int range = assignments_q2_doubleToString(Math.pow(10, digits - 1)).length();
+        int range = assignments_q2_doubleToString(Math.pow(10, digits - 1)).length(); // = digits;
 
 //        for (int digits = 1; digits < 50; ++digits) {
 //            double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
