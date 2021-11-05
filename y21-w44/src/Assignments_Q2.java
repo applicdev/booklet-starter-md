@@ -118,7 +118,6 @@ public class Assignments_Q2 {
                 --n;
                 result = new BigInteger(resultCache[n]);
                 m = positionCache[n];
-                System.out.println("reversed to " + n);
                 continue;
             }
 
@@ -130,8 +129,8 @@ public class Assignments_Q2 {
                     .mod(new BigInteger(String.valueOf(n + 1)))
                     .equals(new BigInteger(String.valueOf(0)));
 
-            System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
             if (match) {
+                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
 
                 resultCache[n] = result.toString();
                 positionCache[n] = m;
