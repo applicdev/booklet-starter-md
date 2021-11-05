@@ -15,8 +15,8 @@ public class Assignments_Q2 {
         // - ...                    ...            ...
         // -                        1-10           divisible by 10
         // ---
-        while (true) assignments_q2();
-//        while (true) assignments_q2_b();
+//        while (true) assignments_q2();
+        while (true) assignments_q2_b();
     }
 
     public static String assignments_q2_doubleToString(Double n) {
@@ -91,57 +91,62 @@ public class Assignments_Q2 {
         // ---
     }
 
-//    public static void assignments_q2_b() {
-//        // ---
-//        System.out.println("\nEnter an integer as the length of the magic number:");
-//        int digits = new java.util.Scanner(System.in).nextInt();
-//
-//
-//        // ~ Find the thing
-//        int[] mCache = new int[digits + 1];
-//
-//        double[] resultCache = new double[digits + 1];
-//        double result = -1;
-//
-//        for (int n = 1, m = 1; ; ++m) {
-//            // ~ done
-//            if (new BigDecimal(result).toPlainString().length() >= digits) break;
-//
-//            // ~ none possible at all
-//            if (n == 0 && m > 9) {
-//                result = -1;
-//                break;
-//            }
-//
-//            // ~ none possible in current
-//            if (m > 9) {
-//                --n;
-//                result = resultCache[n];
-//                m = mCache[n];
-//                continue;
-//            }
-//
-//            // ~ find next
-//            double val = Double.parseDouble(new BigDecimal(result == -1 ? m : result * 10 + m).toPlainString());
-//            if (val % n == 0) {
-//                System.out.println("n: " + n + "\tm: " + m + "\tvalue " + new BigDecimal(val).toPlainString());
-//
-//                resultCache[n] = result;
-//                mCache[n] = m;
-//
-//                result = val;
-//                m = 0;
-//                ++n;
-//            }
-//        }
-//
-//        // ~
-//        String plainResult = new BigDecimal(result).toPlainString();
-//
-//        // ---
-//        System.out.println(plainResult.equals("")
-//                ? "\nNo magic number with " + digits + " Digits found."
-//                : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
-//        // ---
-//    }
+    public static void assignments_q2_b() {
+        // ---
+        System.out.println("\nEnter an integer as the length of the magic number:");
+        int digits = new java.util.Scanner(System.in).nextInt();
+        // ---
+
+        int[] positionCache = new int[digits + 1];
+        String[] resultCache = new String[digits + 1];
+        BigInteger result = new BigInteger("0");
+
+        for (int n = 0, m = 1; n < digits; ++m) {
+            //  |--n----|
+            //   10_____
+            //     ^
+            //    'm' value (0-9) of any digit at position 'n'
+
+            // ~ none possible at all
+            if (n == 0 && m > 9) {
+                result = new BigInteger("-1");
+                break;
+            }
+
+            // ~ none possible in current
+            if (m > 9) {
+                --n;
+                result = new BigInteger(resultCache[n]);
+                m = positionCache[n];
+                System.out.println("reversed to " + n);
+                continue;
+            }
+
+            // ~ find next
+            BigInteger val = result
+                    .multiply(new BigInteger("10"))
+                    .add(new BigInteger(String.valueOf(m)));
+            boolean match = val
+                    .mod(new BigInteger(String.valueOf(n + 1)))
+                    .equals(new BigInteger(String.valueOf(0)));
+
+            System.out.println("n: " + n + "\tm: " + m + "\tvalue " + val);
+            if (match) {
+
+                resultCache[n] = result.toString();
+                positionCache[n] = m;
+
+                result = val;
+                m = -1;
+                ++n;
+            }
+        }
+
+        // ---
+        String plainResult = result.toString();
+        System.out.println(plainResult.equals("-1")
+                ? "\nNo magic number with " + digits + " Digits found."
+                : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
+        // ---
+    }
 }
