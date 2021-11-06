@@ -129,11 +129,11 @@ public class Assignments_Q2 {
             BigInteger resultNext = result
                     .multiply(new BigInteger("10"))
                     .add(new BigInteger(String.valueOf(m)));
-            BigInteger des = new BigInteger(String.valueOf(n + 1));
-            boolean match = new BigInteger("0").equals(resultNext.mod(des));
+            BigInteger mod = new BigInteger(String.valueOf(n + 1));
+            boolean match = new BigInteger("0").equals(resultNext.mod(mod));
 
             if (match) {
-                System.out.println("n: " + n + "\tm: " + m + "\tdes: " + des + "\tvalue: " + resultNext);
+                System.out.println("n: " + n + "\tm: " + m + "\tmod: " + mod + "\tvalue: " + resultNext);
 
                 resultCache[n] = result.toString();
                 positionCache[n] = m;
