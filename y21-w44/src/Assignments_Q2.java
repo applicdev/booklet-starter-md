@@ -98,9 +98,10 @@ public class Assignments_Q2 {
         int digits = new java.util.Scanner(System.in).nextInt();
         // ---
 
+        BigInteger result = new BigInteger("0");
+
         int[] positionCache = new int[digits];
         String[] resultCache = new String[digits];
-        BigInteger result = new BigInteger("0");
 
         for (int n = 0, m = 1; ; ++m) {
             // Generally the same search pattern used as in Q2.a,
@@ -125,7 +126,7 @@ public class Assignments_Q2 {
                 continue;
             }
 
-            // ~ find next
+            // ~ check next 'm'
             BigInteger resultNext = result
                     .multiply(new BigInteger("10"))
                     .add(new BigInteger(String.valueOf(m)));
