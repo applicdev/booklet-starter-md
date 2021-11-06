@@ -126,19 +126,19 @@ public class Assignments_Q2 {
             }
 
             // ~ find next
-            BigInteger val = result
+            BigInteger resultNext = result
                     .multiply(new BigInteger("10"))
                     .add(new BigInteger(String.valueOf(m)));
             BigInteger des = new BigInteger(String.valueOf(n + 1));
-            boolean match = new BigInteger("0").equals(val.mod(des));
+            boolean match = new BigInteger("0").equals(resultNext.mod(des));
 
             if (match) {
-                System.out.println("n: " + n + "\tm: " + m + "\tdes: " + des + "\tvalue: " + val);
+                System.out.println("n: " + n + "\tm: " + m + "\tdes: " + des + "\tvalue: " + resultNext);
 
                 resultCache[n] = result.toString();
                 positionCache[n] = m;
 
-                result = val;
+                result = resultNext;
                 m = -1;
                 ++n;
 
