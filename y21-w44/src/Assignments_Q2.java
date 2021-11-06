@@ -109,7 +109,7 @@ public class Assignments_Q2 {
             //  |--n----|
             //   10_____
             //     ^
-            //    'm' value (between 0 and 9) of any digit at position 'n'
+            //    'm' a value (between 0 and 9) of the digit at position 'n'
 
             // ~ none possible at all; null case
             if (n == 0 && m > 9) {
