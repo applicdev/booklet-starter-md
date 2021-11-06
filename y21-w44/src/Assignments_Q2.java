@@ -149,10 +149,11 @@ public class Assignments_Q2 {
         // ---
         String plainResult = result.toString();
 
-        System.out.println(" ");
-        if (!plainResult.equals("-1")) for (int i = 1; i < resultCache.length; ++i)
-            System.out.println("" + resultCache[i] + " ≡ 0 (mod " + i + ")");
-        System.out.println("" + plainResult + " ≡ 0 (mod " + digits + ")");
+        if (!plainResult.equals("-1")) for (int i = 1; i <= resultCache.length; ++i)
+            System.out.print(i < resultCache.length
+                    ? "\n" + resultCache[i] + " ≡ 0 (mod " + i + ")"
+                    : "\n" + plainResult + " ≡ 0 (mod " + digits + ")\n");
+
 
         System.out.println(plainResult.equals("-1")
                 ? "\nNo magic number with " + digits + " Digits found."
