@@ -152,6 +152,7 @@ public class Assignments_Q2 {
         System.out.println(" ");
         if (!plainResult.equals("-1")) for (int i = 1; i < resultCache.length; ++i)
             System.out.println("" + resultCache[i] + " ≡ 0 (mod " + i + ")");
+        System.out.println("" + plainResult + " ≡ 0 (mod " + digits + ")");
 
         System.out.println(plainResult.equals("-1")
                 ? "\nNo magic number with " + digits + " Digits found."
