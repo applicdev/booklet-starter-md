@@ -17,9 +17,9 @@ public class Assignments_Q2 {
         // -                        1-10           divisible by 10
         // ---
 //        while (true) assignments_q2_a(false); // Found up to 18 -> 120054249048585600
-        while (true) assignments_q2_a(true); // Found up to 10 -> 3816547290
+//        while (true) assignments_q2_a(true); // Found up to 10 -> 3816547290
 //        while (true) assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
-//        while (true) assignments_q2_b(true); // Found up to 10 -> 3816547290
+        while (true) assignments_q2_b(true); // Found up to 10 -> 3816547290
     }
 
     public static String assignments_q2_a_doubleToString(Double n) {
