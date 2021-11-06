@@ -112,7 +112,7 @@ public class Assignments_Q2 {
             //    'm' a value (between 0 and 9) of the digit at position 'n'
 
             // ~ none possible at all; null case
-            if (n == 0 && m > 9) {
+            if (m > 9 && n == 0) {
                 result = new BigInteger("-1");
                 break;
             }
