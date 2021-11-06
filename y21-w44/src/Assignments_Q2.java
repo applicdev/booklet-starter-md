@@ -103,6 +103,9 @@ public class Assignments_Q2 {
         BigInteger result = new BigInteger("0");
 
         for (int n = 0, m = 1; ; ++m) {
+            // Generally the same search pattern used as in Q2.a,
+            // but with cached state history instead of recursion.
+            //
             //  |--n----|
             //   10_____
             //     ^
