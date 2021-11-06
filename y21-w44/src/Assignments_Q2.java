@@ -154,7 +154,6 @@ public class Assignments_Q2 {
                     ? "\n" + resultCache[i] + " ≡ 0 (mod " + i + ")"
                     : "\n" + plainResult + " ≡ 0 (mod " + digits + ")\n");
 
-
         System.out.println(plainResult.equals("-1")
                 ? "\nNo magic number with " + digits + " Digits found."
                 : "\nFirst magic number with " + digits + " Digits found was " + plainResult + ".");
