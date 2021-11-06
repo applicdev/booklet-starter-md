@@ -135,7 +135,6 @@ public class Assignments_Q2 {
             boolean unique = !result.toString().contains(String.valueOf(m));
             boolean divisible = new BigInteger("0").equals(resultNext.mod(mod));
 
-            System.out.println("unique: " + unique + "\tdivisible: " + divisible);
             if (divisible && unique) {
                 System.out.println("n: " + n + "\tm: " + m + "\tmod: " + mod + "\tvalue: " + resultNext);
 
