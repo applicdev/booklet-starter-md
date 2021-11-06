@@ -16,8 +16,10 @@ public class Assignments_Q2 {
         // - ...                    ...            ...
         // -                        1-10           divisible by 10
         // ---
-//        while (true) assignments_q2_a(); // Found up to 18 -> 120054249048585600
-        while (true) assignments_q2_b(); // Found up to 25 -> 3608528850368400786036725
+//        while (true) assignments_q2_a(false); // Found up to 18 -> 120054249048585600
+        while (true) assignments_q2_a(true); // Found up to 10 -> 3816547290
+//        while (true) assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
+//        while (true) assignments_q2_b(true); // Found up to 10 -> 3816547290
     }
 
     public static String assignments_q2_a_doubleToString(Double n) {
@@ -28,22 +30,23 @@ public class Assignments_Q2 {
         return n.equals("") ? 0d : Double.parseDouble(n);
     }
 
-    public static Double assignments_q2_a_traverse(int range, Double value, int stack) {
+    public static Double assignments_q2_a_traverse(boolean uniqueDigits, int range, Double value, int stack) {
         stack += 1;
 
         // ~
-        for (int n = value == null ? 1 : 0; n <= 9; ++n) {
+        for (int n = value == null ? 1 : 0; n <= Math.min(range - 1, 9); ++n) {
             // ~ Concatenate 'value' and 'i' -> 12_3 = 123
             String plainValue = assignments_q2_a_doubleToString(value);
             Double joindValue = assignments_q2_a_stringToDouble(plainValue + n);
+            boolean unique = !uniqueDigits || !plainValue.contains(String.valueOf(n));
 
-            if (joindValue % stack == 0) {
+            if (joindValue % stack == 0 && unique) {
                 System.out.println("range:" + range + "\tstack: " + stack + "\tfound: " + plainValue + "_" + n);
 
                 // ~ Return if done or concatenate the next digit
                 Double childValue = stack > range - 1
                         ? joindValue
-                        : assignments_q2_a_traverse(range, joindValue, stack);
+                        : assignments_q2_a_traverse(uniqueDigits, range, joindValue, stack);
 
                 if (childValue != null) return childValue; // Search has resolved~
             }
@@ -52,7 +55,7 @@ public class Assignments_Q2 {
         return null;
     }
 
-    public static void assignments_q2_a() {
+    public static void assignments_q2_a(boolean uniqueDigits) {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
@@ -63,7 +66,7 @@ public class Assignments_Q2 {
         // ---
 
         // ~ Find the thing
-        Double result = assignments_q2_a_traverse(range, null, 0);
+        Double result = assignments_q2_a_traverse(uniqueDigits, range, null, 0);
         String plainResult = assignments_q2_a_doubleToString(result);
 
         // f(4) = _1 mod 1 = 0
@@ -92,7 +95,7 @@ public class Assignments_Q2 {
         // ---
     }
 
-    public static void assignments_q2_b() {
+    public static void assignments_q2_b(boolean uniqueDigits) {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
@@ -113,13 +116,13 @@ public class Assignments_Q2 {
             //    'm' a value (between 0 and 9) of the digit at position 'n'
 
             // ~ none possible at all; null case
-            if (m > 9 && n == 0) {
+            if (m > Math.min(digits - 1, 9) && n == 0) {
                 result = new BigInteger("-1");
                 break;
             }
 
             // ~ none possible in current path; move back up
-            if (m > 9) {
+            if (m > Math.min(digits - 1, 9)) {
                 --n;
                 result = new BigInteger(resultCache[n]);
                 m = positionCache[n];
@@ -132,7 +135,7 @@ public class Assignments_Q2 {
                     .add(new BigInteger(String.valueOf(m)));
             BigInteger mod = new BigInteger(String.valueOf(n + 1));
 
-            boolean unique = !result.toString().contains(String.valueOf(m));
+            boolean unique = !uniqueDigits || !result.toString().contains(String.valueOf(m));
             boolean divisible = new BigInteger("0").equals(resultNext.mod(mod));
 
             if (divisible && unique) {
