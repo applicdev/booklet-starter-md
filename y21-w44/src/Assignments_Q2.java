@@ -63,14 +63,13 @@ public class Assignments_Q2 {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
-        int range = assignments_q2_a_doubleToString(Math.pow(10, digits - 1)).length(); // = digits;
 
 //        for (int digits = 1; digits < 50; ++digits) {
 //            double range = assignments_q2_doubleToString(Math.pow(10, digits) - 1).length();
         // ---
 
         // ~ Find the thing
-        Double result = assignments_q2_a_traverse(uniqueDigits, range, null, 0);
+        Double result = assignments_q2_a_traverse(uniqueDigits, digits, null, 0);
         String plainResult = assignments_q2_a_doubleToString(result);
 
         // f(4) = _1 mod 1 = 0
