@@ -9,7 +9,7 @@ public class Assignments_Q2 {
         // 1. Find the magic numbers
         //
         // A number is magic if:
-        // - a value of any digit (0-9) can only be used once
+        // - a value to any digit (0-9) can only be used once
         // - the value of the first 1   digits are divisible by 1
         // -                        1-2            divisible by 2
         // -                        1-3            divisible by 3
