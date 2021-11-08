@@ -3,17 +3,17 @@ public class Assignments_Q1 {
         // Q1
         System.out.println("\nQ1");
         // ---
-        //
+        // Find any number in the fibonacci sequence at position 'n'.
         // ---
         System.out.println("\n~ a");
         System.out.println("fib(7)\t= " + assignments_q1_a(7));
         System.out.println("fib(10)\t= " + assignments_q1_a(10));
-        System.out.println("fib(50)\t= " + assignments_q1_a(50));
+        System.out.println("fib(30)\t= " + assignments_q1_a(30));
 
         System.out.println("\n~ b");
         System.out.println("fib(7)\t= " + assignments_q1_b(7));
         System.out.println("fib(10)\t= " + assignments_q1_b(10));
-        System.out.println("fib(50)\t= " + assignments_q1_b(50));
+        System.out.println("fib(30)\t= " + assignments_q1_b(30));
     }
 
     public static double assignments_q1_a(long n) {
