@@ -1,6 +1,5 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.Objects;
 
 public class Assignments_Q2 {
     public static void main(String[] args) {
@@ -10,16 +9,21 @@ public class Assignments_Q2 {
         // 1. Find the magic numbers
         //
         // A number is magic if:
+        // - a value of any digit (0-9) can only be used once
         // - the value of the first 1   digits are divisible by 1
         // -                        1-2            divisible by 2
         // -                        1-3            divisible by 3
         // - ...                    ...            ...
         // -                        1-10           divisible by 10
         // ---
-//        while (true) assignments_q2_a(false); // Found up to 18 -> 120054249048585600
-//        while (true) assignments_q2_a(true); // Found up to 10 -> 3816547290
-//        while (true) assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
-        while (true) assignments_q2_b(true); // Found up to 10 -> 3816547290
+
+        // ~ recursive search
+//        assignments_q2_a(false); // Found up to 18 -> 120054249048585600
+        assignments_q2_a(true); // Found up to 10 -> 3816547290
+
+        // ~ linear search
+//        assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
+        assignments_q2_b(true); // Found up to 10 -> 3816547290
     }
 
     public static String assignments_q2_a_doubleToString(Double n) {
