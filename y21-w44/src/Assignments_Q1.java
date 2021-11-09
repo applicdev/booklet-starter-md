@@ -7,13 +7,18 @@ public class Assignments_Q1 {
         // ---
         double timeStart = System.nanoTime();
         System.out.println("\n~ a");
-        for (int n = 0; n <= 55; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
+        for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
 
         timeStart = System.nanoTime();
         System.out.println("\n~ b");
-        for (int n = 0; n <= 55; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
+        for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
+
+        timeStart = System.nanoTime();
+        System.out.println("\n~ c");
+        for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_c(n));
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
     }
 
     public static double assignments_q1_a(long n) {
@@ -37,5 +42,10 @@ public class Assignments_Q1 {
         double fi = (1 + Math.sqrt(5)) / 2;
         double gr = 1 - fi;
         return (long) Math.floor((Math.pow(fi, n) - Math.pow(gr, n)) / Math.sqrt(5));
+    }
+
+    public static long assignments_q1_c(int n) {
+        if (n <= 2) return 1;
+        return assignments_q1_c(n - 2) + assignments_q1_c(n - 1);
     }
 }
