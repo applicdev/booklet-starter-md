@@ -3,7 +3,7 @@ public class Assignments_Q1 {
         // Q1
         System.out.println("\nQ1");
         // ---
-        // Find any number in the fibonacci sequence at position 'n'.
+        // Find the number in the fibonacci sequence at position 'n'.
         // ---
         double timeStart = System.nanoTime();
         System.out.println("\n~ a");
