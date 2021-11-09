@@ -5,13 +5,15 @@ public class Assignments_Q1 {
         // ---
         // Find any number in the fibonacci sequence at position 'n'.
         // ---
+        double timeStart = System.nanoTime();
         System.out.println("\n~ a");
-        for (int n = 1; n <= 10; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
-        System.out.println("fib(30)\t= " + assignments_q1_a(30));
+        for (int n = 0; n <= 55; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
 
+        timeStart = System.nanoTime();
         System.out.println("\n~ b");
-        for (int n = 1; n <= 10; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
-        System.out.println("fib(30)\t= " + assignments_q1_b(30));
+        for (int n = 0; n <= 55; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
     }
 
     public static double assignments_q1_a(long n) {

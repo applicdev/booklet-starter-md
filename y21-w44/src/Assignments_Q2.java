@@ -102,6 +102,7 @@ public class Assignments_Q2 {
         // ---
         System.out.println("\nEnter an integer as the length of the magic number:");
         int digits = new java.util.Scanner(System.in).nextInt();
+        double timeStart = System.nanoTime();
         // ---
 
         BigInteger result = new BigInteger("0");
@@ -117,6 +118,7 @@ public class Assignments_Q2 {
             //   10_____
             //     ^
             //    'm' a value (between 0 and 9) of the digit at position 'n'
+
 
             // ~ none possible at all; null case
             if (m > Math.min(digits - 1, 9) && n == 0) {
@@ -157,6 +159,7 @@ public class Assignments_Q2 {
 
         // ---
         String plainResult = result.toString();
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
 
         if (!plainResult.equals("-1")) for (int i = 1; i <= resultCache.length; ++i)
             System.out.print(i < resultCache.length
