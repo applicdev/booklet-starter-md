@@ -21,6 +21,7 @@ public class Assignments_Q1 {
         System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
     }
 
+    // linear
     public static double assignments_q1_a(long n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
@@ -38,13 +39,16 @@ public class Assignments_Q1 {
         return result;
     }
 
+    // wth; but works~
     public static long assignments_q1_b(int n) {
         double fi = (1 + Math.sqrt(5)) / 2;
         double gr = 1 - fi;
         return (long) Math.floor((Math.pow(fi, n) - Math.pow(gr, n)) / Math.sqrt(5));
     }
 
+    // recursive
     public static long assignments_q1_c(int n) {
+        if (n == 0) return 0;
         if (n <= 2) return 1;
         return assignments_q1_c(n - 2) + assignments_q1_c(n - 1);
     }
