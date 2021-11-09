@@ -6,29 +6,11 @@ public class Assignments_Q1 {
         // Find any number in the fibonacci sequence at position 'n'.
         // ---
         System.out.println("\n~ a");
-        System.out.println("fib(1)\t= " + assignments_q1_a(1));
-        System.out.println("fib(2)\t= " + assignments_q1_a(2));
-        System.out.println("fib(3)\t= " + assignments_q1_a(3));
-        System.out.println("fib(4)\t= " + assignments_q1_a(4));
-        System.out.println("fib(5)\t= " + assignments_q1_a(5));
-        System.out.println("fib(6)\t= " + assignments_q1_a(6));
-        System.out.println("fib(7)\t= " + assignments_q1_a(7));
-        System.out.println("fib(8)\t= " + assignments_q1_a(8));
-        System.out.println("fib(9)\t= " + assignments_q1_a(9));
-        System.out.println("fib(10)\t= " + assignments_q1_a(10));
+        for (int n = 1; n <= 10; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
         System.out.println("fib(30)\t= " + assignments_q1_a(30));
 
         System.out.println("\n~ b");
-        System.out.println("fib(1)\t= " + assignments_q1_b(1));
-        System.out.println("fib(2)\t= " + assignments_q1_b(2));
-        System.out.println("fib(3)\t= " + assignments_q1_b(3));
-        System.out.println("fib(4)\t= " + assignments_q1_b(4));
-        System.out.println("fib(5)\t= " + assignments_q1_b(5));
-        System.out.println("fib(6)\t= " + assignments_q1_b(6));
-        System.out.println("fib(7)\t= " + assignments_q1_b(7));
-        System.out.println("fib(8)\t= " + assignments_q1_b(8));
-        System.out.println("fib(9)\t= " + assignments_q1_b(9));
-        System.out.println("fib(10)\t= " + assignments_q1_b(10));
+        for (int n = 1; n <= 10; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
         System.out.println("fib(30)\t= " + assignments_q1_b(30));
     }
 
