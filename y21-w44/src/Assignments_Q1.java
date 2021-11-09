@@ -8,17 +8,17 @@ public class Assignments_Q1 {
         double timeStart = System.nanoTime();
         System.out.println("\n~ a");
         for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_a(n));
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ms");
 
         timeStart = System.nanoTime();
         System.out.println("\n~ b");
         for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_b(n));
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ms");
 
         timeStart = System.nanoTime();
         System.out.println("\n~ c");
         for (int n = 0; n <= 35; n++) System.out.println("fib(" + n + ")\t= " + assignments_q1_c(n));
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ns");
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ms");
     }
 
     // linear
