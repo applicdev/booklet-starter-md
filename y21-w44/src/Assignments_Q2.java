@@ -19,11 +19,11 @@ public class Assignments_Q2 {
 
         // ~ recursive search
 //        assignments_q2_a(false); // Found up to 18 -> 120054249048585600
-        assignments_q2_a(true); // Found up to 10 -> 3816547290
+//        assignments_q2_a(true); // Found up to 10 -> 3816547290
 
         // ~ linear search
-//        assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
-        assignments_q2_b(true); // Found up to 10 -> 3816547290
+//        while (true) assignments_q2_b(false); // Found up to 25 -> 3608528850368400786036725
+        while (true) assignments_q2_b(true); // Found up to 10 -> 3816547290
     }
 
     public static String assignments_q2_a_doubleToString(Double n) {
@@ -159,7 +159,7 @@ public class Assignments_Q2 {
 
         // ---
         String plainResult = result.toString();
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000) + "us");
+        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ms");
 
         if (!plainResult.equals("-1")) for (int i = 1; i <= resultCache.length; ++i)
             System.out.print(i < resultCache.length
