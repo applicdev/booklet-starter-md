@@ -159,7 +159,7 @@ public class Assignments_Q2 {
 
         // ---
         String plainResult = result.toString();
-        System.out.println("\nDone in :" + ((System.nanoTime() - timeStart) / 1000 / 1000) + "ms");
+        System.out.println("\nDone in: " + ((System.nanoTime() - timeStart) / 1000) + "us");
 
         if (!plainResult.equals("-1")) for (int i = 1; i <= resultCache.length; ++i)
             System.out.print(i < resultCache.length
