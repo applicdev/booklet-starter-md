@@ -3,38 +3,34 @@ import java.util.Scanner;
 public class PerfectNumbers {
 
     public static void main(String[] args) {
+        int start = new Scanner(System.in).nextInt();
         int limit = new Scanner(System.in).nextInt();
 
-        for (int n = 2; n <= limit; n++) {
+        for (int n = start; n <= limit; n++) {
             if (isPerfect(n))
                 System.out.println(n);
         }
     }
 
 
-    public static int getSum(int[] nList) {
-        int result = 0;
-        for (int n : nList) result += n;
-        return result;
-    }
+    public static int sumFactors(int n) {
+        if (n % 2 != 0) return -1;
 
-    public static int[] getFactors(int n) {
-        int[] nList = new int[n];
+        int sum = 0;
 
-        for (int pos = 0, factor = 2; factor < (n / 2) + 1; ++factor)
+        for (int factor = 2; factor < (n * 0.5) + 1; ++factor)
             if (n % factor == 0) {
-                nList[pos] = factor;
-                pos++;
+                sum += factor;
+                if (sum > n) {
+                    sum = -1;
+                    break;
+                }
             }
 
-        nList[nList.length - 1] = 1;
-
-        // System.out.println(n + "\t" + Arrays.toString(nList));
-
-        return nList;
+        return sum + 1;
     }
 
     public static boolean isPerfect(int n) {
-        return (getSum(getFactors(n)) == n);
+        return (sumFactors(n) == n);
     }
 }
