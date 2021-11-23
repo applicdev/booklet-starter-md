@@ -15,7 +15,7 @@ public class PerfectNumbers {
 
             // ~
             for (; n < limit; ++n) {
-                if (n != 0 && n % 1_000_000L == 0) System.out.println("+ none until " + n);
+                if (n != 0 && n % 1_000_000L == 0) System.out.println("+  none until " + n);
 
                 // ~
                 ArrayList<Long> resultDivisors = PerfectNumbers.evaluate(n, continuousDivisors);
@@ -49,7 +49,7 @@ public class PerfectNumbers {
                     if (sum == -1L) break;
 
                     // ~
-                    System.out.println("\nPress any key to continue... ");
+                    System.out.println("\nPress [Enter] to continue... ");
                     new Scanner(System.in).nextLine();
 
                     ++n;
