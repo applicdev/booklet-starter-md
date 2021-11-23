@@ -31,12 +31,7 @@ public class PerfectNumbers {
 
                     Collections.sort(resultDivisors);
                     for (long divisor : resultDivisors) {
-                        if (divisors == null) break;
-                        if (!divisors.contains(divisor)) {
-                            if (divisors.contains(divisor + 1)) continuousDivisors.add(divisor + 1);
-                            break;
-                        }
-
+                        if (divisors == null || !divisors.contains(divisor)) break;
                         continuousDivisors.add(divisor);
                     }
 
@@ -69,11 +64,11 @@ public class PerfectNumbers {
 
         // ~ Known even perfect numbers have some shared divisors...
         // 6          => 1, 2, 3, 6                                 divisors: 4
-        // 28         => 1, 2, 4, 7,  ...                           divisors: 6   share to pre.: 2  (and 3th + 1)
-        // 496        => 1, 2, 4, 8, 16, 31, ...                    divisors: 10  share to pre.: 3  (and 4th + 1)
-        // 8128       => 1, 2, 4, 8, 16, 32, 64, 127, ...           divisors: 14  share to pre.: 5  (and 6th + 1)
-        // 33550336   => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 26  share to pre.: 7  (and 8th + 1)
-        // 8589869056 => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 34  share to pre.: 13 (and 14th + 1)
+        // 28         => 1, 2, 4, 7,  ...                           divisors: 6   share to pre.: 2
+        // 496        => 1, 2, 4, 8, 16, 31, ...                    divisors: 10  share to pre.: 3
+        // 8128       => 1, 2, 4, 8, 16, 32, 64, 127, ...           divisors: 14  share to pre.: 5
+        // 33550336   => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 26  share to pre.: 7
+        // 8589869056 => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 34  share to pre.: 13
         // ...
         if (continuousDivisors != null) {
             for (long divisor : continuousDivisors) if (n % divisor != 0) return null;
