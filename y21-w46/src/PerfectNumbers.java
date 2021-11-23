@@ -3,40 +3,6 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class PerfectNumbers {
-/*
-    public static void main(String[] args) {
-        int start = new Scanner(System.in).nextInt();
-        int limit = new Scanner(System.in).nextInt();
-
-        for (int n = start; n <= limit; n++) {
-            if (isPerfect(n))
-                System.out.println(n);
-        }
-    }
-
-
-    public static int sumFactors(int n) {
-        if (n % 2 != 0) return -1;
-
-        int sum = 0;
-
-        for (int factor = 2; factor < (n * 0.5) + 1; ++factor)
-            if (n % factor == 0) {
-                sum += factor;
-                if (sum > n) {
-                    sum = -1;
-                    break;
-                }
-            }
-
-        return sum + 1;
-    }
-
-    public static boolean isPerfect(int n) {
-        return (sumFactors(n) == n);
-    }
-*/
-
     public static void main(String[] args) {
         long n = 0, limit = (long) Math.pow(2, 64);
         ArrayList<Long> divisors = null;
@@ -57,10 +23,7 @@ public class PerfectNumbers {
 
                 // ~
                 long sum = 0;
-                for (long f : resultDivisors) {
-//                    System.out.println("+ " + n + " divisors with " + f);
-                    sum += f;
-                }
+                for (long f : resultDivisors) sum += f;
 
                 // ~
                 if (sum - n == n) {
@@ -68,7 +31,12 @@ public class PerfectNumbers {
 
                     Collections.sort(resultDivisors);
                     for (long divisor : resultDivisors) {
-                        if (divisors == null || !divisors.contains(divisor)) break;
+                        if (divisors == null) break;
+                        if (!divisors.contains(divisor)) {
+                            if (divisors.contains(divisor + 1)) continuousDivisors.add(divisor + 1);
+                            break;
+                        }
+
                         continuousDivisors.add(divisor);
                     }
 
@@ -96,20 +64,16 @@ public class PerfectNumbers {
     }
 
     public static ArrayList<Long> evaluate(long n, ArrayList<Long> continuousDivisors) {
-        // ~ No even perfect numbers in the set 0 > n > 2^{64}
+        // ~ No even perfect numbers in 0 > n > 2^{64}
         if (n <= 0 || n % 2 != 0) return null;
-        // > [...] It is unknown whether any odd perfect numbers exist, though various results have been obtained. In 1496,
-        // > Jacques Lefèvre stated that Euclid's rule gives all perfect numbers, thus implying that no odd perfect
-        // > number exists.".  [...]
-        // > – https://en.wikipedia.org/wiki/Perfect_number
 
-        // ~ Known perfect numbers have somewhat continuous divisors...
-        // 6          => 1, 2, 3, 6                                 length: 4
-        // 28         => 1, 2, 4, 7,  ...                           length: 6   matches last 2  (and 3th + 1)
-        // 496        => 1, 2, 4, 8, 16, 31, ...                    length: 10  matches last 3  (and 4th + 1)
-        // 8128       => 1, 2, 4, 8, 16, 32, 64, 127, ...           length: 14  matches last 5  (and 6th + 1)
-        // 33550336   => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... length: 26  matches last 7  (and 8th + 1)
-        // 8589869056 => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... length: 34  matches last 13 (and 14th + 1)
+        // ~ Known even perfect numbers have some shared divisors...
+        // 6          => 1, 2, 3, 6                                 divisors: 4
+        // 28         => 1, 2, 4, 7,  ...                           divisors: 6   share to pre.: 2  (and 3th + 1)
+        // 496        => 1, 2, 4, 8, 16, 31, ...                    divisors: 10  share to pre.: 3  (and 4th + 1)
+        // 8128       => 1, 2, 4, 8, 16, 32, 64, 127, ...           divisors: 14  share to pre.: 5  (and 6th + 1)
+        // 33550336   => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 26  share to pre.: 7  (and 8th + 1)
+        // 8589869056 => 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, ... divisors: 34  share to pre.: 13 (and 14th + 1)
         // ...
         if (continuousDivisors != null) {
             for (long divisor : continuousDivisors) if (n % divisor != 0) return null;
@@ -122,7 +86,6 @@ public class PerfectNumbers {
 
         for (long divisor = 1; ; divisor += 1) {
             if (sum - n > n) return null;
-//            if (divisor > n) break;
             if (divisor * divisor > n) break;
 
             if (n % divisor == 0) {
