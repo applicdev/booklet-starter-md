@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class DateFormatting {
     public static void main(String[] args) {
         DateFormat foo = DateFormat.from("Sat Nov 27 2021 16:34:39 GMT+0100 (Mitteleuropäische Normalzeit)");
@@ -169,10 +168,6 @@ public class DateFormatting {
         return timestamp;
     }
 
-    public static boolean isLeapyear(int year) {
-        return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
-    }
-
 
     public static String dateToString(long unixtime) {
         unixtime /= 1000;
@@ -213,5 +208,9 @@ public class DateFormatting {
         tag += unixtime;
 
         return "" + DateFormatting.langMonths.get(monat) + " " + tag + "th, " + jahr + " " + stunde + ":" + minute + ":" + sekunde;
+    }
+
+    private static boolean isLeapyear(int year) {
+        return ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0)));
     }
 }
