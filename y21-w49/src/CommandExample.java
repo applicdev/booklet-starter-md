@@ -1,33 +1,48 @@
 // ~ declare interface structure
 interface MyCommandInterface {
-    void execute(Object data);
+    void execute(String name);
 }
 
 // ~ interface example
 class CommandExample {
     // ~
-    public static void myCommand(Object data) {
-        System.out.println(data.toString());
+    static void myCommand(String greeting, String name) {
+        System.out.println(greeting + ", " + name + "!");
     }
 
+    // ~ declare interface class
+    static class MyInterface implements MyCommandInterface {
+        final String greeting;
+
+        MyInterface(String name) {
+            this.greeting = name;
+        }
+
+        public void execute(String name) {
+            CommandExample.myCommand(this.greeting, name);
+        }
+    }
+
+
     // ~
-    public static void myCommandCaller(MyCommandInterface command, Object data) {
-        // [... do something]
-
-        command.execute(data);
-
-        // [... do something]
+    static class MyCaller {
+        MyCaller(MyCommandInterface manager, String[] name) {
+            for (String n : name) {
+                manager.execute(n);
+            }
+        }
     }
 
     // ~
     public static void main(String... args) {
-        // ~ declare interface class
-        class myInterface implements MyCommandInterface {
-            public void execute(Object data) {
-                CommandExample.myCommand(data);
-            }
-        }
 
-        myCommandCaller(new myInterface(), "hello world");
+        MyInterface myManager = new CommandExample.MyInterface("Hello");
+
+        new CommandExample.MyCaller(
+                myManager,
+                new String[]{"World"}
+        );
+
+        new CommandExample.MyCaller(myManager, new String[]{"Foo", "Boo"});
     }
 }
