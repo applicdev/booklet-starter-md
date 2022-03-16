@@ -9,7 +9,7 @@ class PrimeReader {
          * die jeweils nächste Primzahl zurückgegeben.
          */
 
-        PrimeStepper create = new PrimeStepper(100_000, 42);
+        PrimeStepper create = new PrimeStepper(100_000, 23);
         PrimeStepper.Result result;
 
         // ~ yield until limit is reached
@@ -18,12 +18,6 @@ class PrimeReader {
             //        ...  .generiere();
             result = create.next();
             System.out.format("\n%d of %d : %d", (long) create.state, (long) create.limit, (long) result.value);
-
-//            // ~
-//            if (!result.done) {
-//                System.out.format("\nPress [Return] to continue... ");
-//                new java.util.Scanner(System.in).nextLine();
-//            }
         } while (!result.done);
     }
 }
@@ -34,9 +28,10 @@ class PrimeStepper {
     public double value;
     public double state;
     public double limit;
-    public PrimeStepper.Result current;
 
     // ~ yield value
+    private PrimeStepper.Result current;
+
     public static class Result {
         public double value;
         public boolean done;
@@ -82,31 +77,7 @@ class PrimeStepper {
     }
 
     private boolean isComposite(double n) {
-        /* Miller-Rabin Primality Test
-         * See https://youtu.be/_MscGSN5J6o – "Witness Numbers (and the truthful 1,662,803)" by Numberphile
-         * &   https://youtu.be/qdylJqXCDGs – "Miller-Rabin Primality Test" by Theoretically
-         */
-
-        // ~ m
-        double m = 0;
-        for (double k = 1; m % 2 == 0; k++) {
-            m = (n - 1) / Math.pow(2, k);
-        }
-
-        // ~ a
-        double[] aList = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
-        for (double a : aList) {
-            // ~ b
-            double b = this.modularExponentiation(a, m, n);
-            if (b == 1 || b == n - 1) return false; // n may be composite, but likely prime
-        }
-
-        return true; // n is composite
-    }
-
-    private double modularExponentiation(double val, double pow, double mod) {
-        double result = 1;
-        for (; pow > 0; --pow) result = ((result * val) % mod);
-        return result;
+         for (int i = 2; i < n / 2; ++i) if (n % i == 0) return true;
+         return false;
     }
 }
