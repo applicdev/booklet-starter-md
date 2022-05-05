@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: '40 18 * * 6'
+    - cron: '* 2 * * *'
 
 jobs:
   deploy:
@@ -12,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        deno-version: [1.20.5]
+        deno-version: [1.21.1]
 
     steps:
       - name: Git Checkout Deno Module
@@ -24,12 +27,12 @@ jobs:
           deno-version: ${{ matrix.deno-version }}
 
       - name: Build
-        run: deno run -A --reload --unstable https://raw.githubusercontent.com/applicdev/reader/main/lib/reader.ts --bundle -f
+        run: deno run -A --reload --unstable https://raw.githubusercontent.com/milotheirself/reader/main/lib/reader.ts --bundle -f -p
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACTIONS_ACCESS_TOKEN }}
-          publish_dir: ./.github/workflows-out
+          publish_dir: ./.github/workflows-hosted
           enable_jekyll: false
           # cname: example.com
